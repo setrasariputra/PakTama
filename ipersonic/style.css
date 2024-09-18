@@ -76,10 +76,71 @@ body {
 .topmenu li:hover ul li a:hover {
     background-color: rgb(30, 147, 230);
 }
+.jumbotron {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: linear-gradient(to bottom, #E1EAEF, #CFD9DF);
+}
+.content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    font-size: 14px;
+}
+.lead {
+    font-size: 18px;
+}
+.font-size-biggest {
+    font-size: 60px;
+    line-height: 1.2;
+}
+.font-weight-normal {
+    font-weight: normal;
+}
+.font-weight-lighter {
+    font-weight: 200;
+}
+.grid-2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.btn {
+    display: inline-block;
+    background-color: grey;
+    text-decoration: none;
+    padding: 3px 10px 3px 10px;
+    color: white;
+    font-size: 12px;
+}
+.btn-orange {
+    background-color: #FF7518;
+}
+.btn-md {
+    font-size: 16px;
+    padding: 10px 20px 10px 20px;
+}
+.btn-lg {
+    font-size: 18px;
+    padding: 20px 30px 20px 30px;
+}
+a {
+    text-decoration: none;
+    color: #2780E3;
+}
+.color-grey {
+    color: #999999;
+}
 /* User access with Laptop Device */
 @media (min-width: 990px) and (max-width: 1200px) {
     .container {
         width: 920px;
+    }
+    .grid-2 {
+        grid-template-columns: 1fr;
     }
 }
 /* User access with Pad Device */
@@ -87,10 +148,16 @@ body {
     .container {
         width: 720px;
     }
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
 }
 /* User access with Mobile Device */
 @media (max-width: 767px) {
     .container {
         width: 90%;
+    }
+    .grid-2 {
+        grid-template-columns: 1fr;
     }
 }
