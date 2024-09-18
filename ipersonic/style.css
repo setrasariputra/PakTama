@@ -91,6 +91,9 @@ body {
     text-align: center;
     font-size: 14px;
 }
+.quiz-title {
+    border-bottom: 1px solid #E6E6E6;
+}
 .lead {
     font-size: 18px;
 }
