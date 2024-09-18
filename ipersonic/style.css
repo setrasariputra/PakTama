@@ -134,6 +134,12 @@ a {
 .color-grey {
     color: #999999;
 }
+.icon-sm {
+    font-size: 12px;
+}
+.icon-xs {
+    font-size: 10px;
+}
 /* User access with Laptop Device */
 @media (min-width: 990px) and (max-width: 1200px) {
     .container {
