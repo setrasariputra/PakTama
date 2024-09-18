@@ -94,6 +94,25 @@ body {
 .quiz-title {
     border-bottom: 1px solid #E6E6E6;
 }
+.quiz-step {
+    margin-top: 20px;
+}
+.quiz-step ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+.quiz-step ul li {
+    display: inline-block;
+    margin-right: 20px;
+    color: #999999;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+}
+.quiz-step li.active {
+    background-color: #AAAAAA;
+    color: white;
+}
 .lead {
     font-size: 18px;
 }
