@@ -1,10 +1,30 @@
 class PersonalityQuiz {
     constructor() {
+        this.personalities = [
+            {'fx': 'BBBB', 'url': '1.html', 'label': 'Idealis Penyelaras'},
+            {'fx': 'ABBB', 'url': '2.html', 'label': 'Idealis Terlibat'},
+        ];
+
         this.init();
     }
 
     init() {
+        this.fxAnswer = '';
+        this.displayDropdownTopMenu();
         this.displayFooter();
+    }
+
+    displayDropdownTopMenu() {
+        let personalityHTML = '<ul>';
+        personalityHTML += '<ul>';
+        // looping 
+        for(let i = 0; i < this.personalities.length; i++) {
+            personalityHTML += '<li><a href="'+this.personalities[i]['url']+'">'+this.personalities[i]['label']+'</a></li>';
+        }
+        personalityHTML += '</ul>';
+
+        const personalityContainer = document.querySelector(".personality-container");
+        personalityContainer.innerHTML = personalityHTML;
     }
 
     displayFooter() {
