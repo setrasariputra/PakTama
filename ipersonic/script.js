@@ -35,16 +35,15 @@ class PersonalityQuiz {
             {
                 1: "Saya orang yang fleksibel dan spontan, kadang-kadang agak kacau.",
                 2: "Saya orang yang handal dan terorganisir dengan baik. Saya lebih memilih untuk merencanakan masa depan."
-            }
+            },
         ];
 
-        this.fxAnswer = 'ABBA';
+        this.fxAnswer = '';
 
         this.init();
     }
 
     init() {
-        this.fxAnswer = '';
         this.displayDropdownTopMenu();
         this.displayFooter();
         this.displayQuizOptions()
@@ -75,16 +74,39 @@ class PersonalityQuiz {
     }
 
     displayQuizOptions() {
+        // set totalAnswer
+        let totalAnswer = this.fxAnswer.length;
+
+        // container step
         let quizStepHTML = '<ul>';
+        let stepActive = '';
         // looping quizOptions
         for(let i = 0; i < this.quizOptions.length; i++) {
             let numberStep = i + 1;
-            quizStepHTML += '<li>Langkah '+numberStep+'</li>';
+            stepActive = '';
+            if(totalAnswer === i) {
+                stepActive = 'active';
+            }
+            quizStepHTML += '<li class="'+stepActive+'">Langkah '+numberStep+'</li>';
         }
         quizStepHTML += '</ul>';
 
         const quizStepContainer = document.querySelector(".quiz-step");
         quizStepContainer.innerHTML = quizStepHTML;
+
+        // container quiz options
+        let quizOptionsHTML = '<div class="quiz-answer-option">';
+        quizOptionsHTML += '<p class="lead-2 font-weight-lighter">'+this.quizOptions[totalAnswer][1]+'</p>';
+        quizOptionsHTML += '<a href="#" class="btn btn-orange btn-md"><i class="fa fa-play icon-sm" aria-hidden="true"></i> Hal ini berlaku untuk saya</a>';
+        quizOptionsHTML += '</div>';
+        
+        quizOptionsHTML += '<div class="quiz-answer-option">';
+        quizOptionsHTML += '<p class="lead-2 font-weight-lighter">'+this.quizOptions[totalAnswer][2]+'</p>';
+        quizOptionsHTML += '<a href="#" class="btn btn-orange btn-md"><i class="fa fa-play icon-sm" aria-hidden="true"></i> Hal ini berlaku untuk saya</a>';
+        quizOptionsHTML += '</div>';
+
+        const quizOptionsContainer = document.querySelector(".quiz-options");
+        quizOptionsContainer.innerHTML = quizOptionsHTML;
     }
 }
 
