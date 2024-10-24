@@ -118,7 +118,25 @@ class PersonalityQuiz {
             button.addEventListener("click", () => {
                 // get attribut data
                 let valueButton = button.getAttribute("data");
-                alert(valueButton);
+
+                // save and update fxAnswer
+                this.fxAnswer += valueButton;
+
+                // jika panjang jawaban masih dibawah rentang panjang dari quizOptions
+                if(this.fxAnswer.length < this.quizOptions.length) {
+                    // maka lakukan reload/refresh quizOptions
+                    this.displayQuizOptions();
+                }else{
+                    // detect result to edirect result page
+                    // how to detect? => do looping this.personalities
+                    for(let i = 0; i < this.personalities.length; i++) {
+                        console.log(this.fxAnswer+' = '+this.personalities[i]['fx']);
+                        if(this.fxAnswer === this.personalities[i]['fx']) {
+                            window.location.href = this.personalities[i]['url'];
+                        }
+                    }
+
+                }
             });
         });
     }
