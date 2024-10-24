@@ -97,16 +97,30 @@ class PersonalityQuiz {
         // container quiz options
         let quizOptionsHTML = '<div class="quiz-answer-option">';
         quizOptionsHTML += '<p class="lead-2 font-weight-lighter">'+this.quizOptions[totalAnswer][1]+'</p>';
-        quizOptionsHTML += '<a href="#" class="btn btn-orange btn-md"><i class="fa fa-play icon-sm" aria-hidden="true"></i> Hal ini berlaku untuk saya</a>';
+        quizOptionsHTML += '<a href="#" class="btn btn-orange btn-md choose-answer" data="A"><i class="fa fa-play icon-sm" aria-hidden="true"></i> Hal ini berlaku untuk saya</a>';
         quizOptionsHTML += '</div>';
         
         quizOptionsHTML += '<div class="quiz-answer-option">';
         quizOptionsHTML += '<p class="lead-2 font-weight-lighter">'+this.quizOptions[totalAnswer][2]+'</p>';
-        quizOptionsHTML += '<a href="#" class="btn btn-orange btn-md"><i class="fa fa-play icon-sm" aria-hidden="true"></i> Hal ini berlaku untuk saya</a>';
+        quizOptionsHTML += '<a href="#" class="btn btn-orange btn-md choose-answer" data="B"><i class="fa fa-play icon-sm" aria-hidden="true"></i> Hal ini berlaku untuk saya</a>';
         quizOptionsHTML += '</div>';
 
         const quizOptionsContainer = document.querySelector(".quiz-options");
         quizOptionsContainer.innerHTML = quizOptionsHTML;
+
+        // run saveQuizAnswer Method
+        this.saveQuizAnswer();
+    }
+
+    saveQuizAnswer() {
+        const answerButtons = document.querySelectorAll(".choose-answer");
+        answerButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                // get attribut data
+                let valueButton = button.getAttribute("data");
+                alert(valueButton);
+            });
+        });
     }
 }
 
